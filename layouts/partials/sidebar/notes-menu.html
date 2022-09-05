@@ -1,0 +1,21 @@
+<!-- Auto collapsible tag menu -->
+<ul class="list-unstyled collapsible-sidebar">
+  {{ $tags := $.Site.Taxonomies.tags.Alphabetical  }}
+  <li class="mb-1">
+    <button class="btn btn-toggle align-items-center rounded collapsed"
+      data-bs-toggle="collapse" data-bs-target="#taxonomy-{{ md5 "tags" }}" aria-expanded="true">
+      Tags
+    </button>
+    <div class="collapse show" id="taxonomy-{{ md5 "tags" }}">
+      <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+      {{ range $tags }}
+        {{ with .Page }}
+          <li>
+            <a class="docs-link rounded" href="{{ .RelPermalink }}">{{ .Title }} ({{ len .Pages }})</a>
+          </li>
+        {{ end }}
+      {{ end }}
+      </ul>
+    </div>
+  </li>
+</ul>
