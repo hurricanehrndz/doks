@@ -1,10 +1,10 @@
 # Meta Data for SEO
 
 ## Homepage
-title = "Doks"
+title = "hrndz.dev"
 titleSeparator = "-"
-titleAddition = "Modern Documentation Theme"
-description = "Doks is a Hugo theme for building secure, fast, and SEO-ready documentation websites, which you can easily update and customize."
+titleAddition = "Brain Dump"
+description = "Random swirl of thoughts and notes, without any rhyme or reason."
 
 ## Documentation
 # docsVersion = "0.3"
@@ -13,20 +13,20 @@ description = "Doks is a Hugo theme for building secure, fast, and SEO-ready doc
 images = ["doks.png"]
 ogLocale = "en_US"
 domainTLD = "doks.netlify.app"
-titleHome = "Doks Theme"
+titleHome = "HurricaneHrndz's Notes"
 
 ## Twitter Cards
-twitterSite = "@getdoks"
-twitterCreator = "@henkverlinde"
+twitterSite = "@hurricanehrndz"
+twitterCreator = "@hurricanehrndz"
 
 ## JSON-LD
-# schemaType = "Person"
-schemaType = "Organization"
-schemaName = "Doks"
-schemaAuthor = "Henk Verlinde"
-schemaAuthorTwitter = "https://twitter.com/henkverlinde"
-schemaAuthorLinkedIn = "https://www.linkedin.com/in/henkverlinde/"
-schemaAuthorGitHub = "https://github.com/h-enk"
+schemaType = "Person"
+# schemaType = "Organization"
+schemaName = "HurricaneHrndz"
+schemaAuthor = "Carlos Hernandez"
+schemaAuthorTwitter = "https://twitter.com/hurricanehrndz"
+schemaAuthorLinkedIn = "https://www.linkedin.com/in/CarlosBHernandez/"
+schemaAuthorGitHub = "https://github.com/hurricanehrndz"
 schemaLocale = "en-US"
 schemaLogo = "logo-doks.png"
 schemaLogoWidth = 512
@@ -34,9 +34,9 @@ schemaLogoHeight = 512
 schemaImage = "doks.png"
 schemaImageWidth = 1280
 schemaImageHeight = 640
-schemaTwitter = "https://twitter.com/getdoks"
+schemaTwitter = "https://twitter.com/hurricanehrndz"
 schemaLinkedIn = ""
-schemaGitHub = "https://github.com/h-enk/doks"
+schemaGitHub = "https://github.com/hurricanehrndz/doks"
 schemaSection = "blog"
 
 ## Sitelinks Search Box
