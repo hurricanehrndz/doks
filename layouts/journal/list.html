@@ -1,22 +1,43 @@
 {{ define "main" }}
-<div class="row justify-content-center">
-  <div class="col-md-12 col-lg-10 col-xl-8">
-    <article>
-      <h1 class="text-center">{{ if eq .CurrentSection .FirstSection }}{{ .Section | humanize }}{{ else }}{{ .Title }}{{ end }}</h1>
-      <div class="text-center">{{ .Content }}</div>
-			<div class="card-list">
-				{{ $currentSection := .CurrentSection }}
-				{{ range where .Site.RegularPages.ByTitle "Section" .Section }}
-					{{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
-						<div class="card my-3">
-							<div class="card-body">
-								<a class="stretched-link" href="{{ .RelPermalink }}">{{ .Params.title | title }} &rarr;</a>
-							</div>
+	<div class="row flex-xl-nowrap">
+		<div class="col-lg-5 col-xl-4 docs-sidebar{{ if ne .Site.Params.options.navbarSticky true }} docs-sidebar-top{{ end }} d-none d-lg-block">
+			<nav {{ if eq .Site.Params.menu.section.collapsibleSidebar false }}id="sidebar-default" {{ end }}class="docs-links" aria-label="Main navigation">
+				{{ partial "sidebar/docs-menu.html" . }}
+			</nav>
+		</div>
+		<main class="docs-content col-lg-11 col-xl{{ if eq .Site.Params.options.fullWidth false }}-9{{ end }}">
+			<h1>{{ .Title }}</h1>
+			<p class="lead">{{ .Params.lead | safeHTML }}</p>
+			{{ .Content }}
+			<h1>Recent entries</h1>
+			</br>
+			<div class="row row-cols-1 row-cols-lg-2 g-lg-5">
+				{{ $paginator := .Paginate (.Data.Pages) -}}
+				{{ range $paginator.Pages -}}
+				<div class="col">
+					<div class="card">
+						{{- .Scratch.Set "fillImage" "1270x620 Center" -}}
+						{{ partial "content/card-image.html" . }}
+						<div class="card-body">
+							<article>
+								<h2 class="h3"><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}</a></h2>
+								<p>{{ .Params.excerpt | safeHTML }}</p>
+								{{ partial "main/blog-meta.html" . -}}
+							</article>
 						</div>
-					{{ end }}
-				{{ end }}
+					</div>
+				</div>
+				{{ end -}}
 			</div>
-    </article>
-  </div>
-</div>
+			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
+				{{ if .Site.Params.lastMod -}}
+					{{ partial "main/last-modified.html" . }}
+				{{ end -}}
+				{{ if .Site.Params.editPage -}}
+					{{ partial "main/edit-page.html" . }}
+				{{ end -}}
+			</div>
+			{{ partial "main/docs-navigation.html" . }}
+		</main>
+	</div>
 {{ end }}
