@@ -7,5 +7,5 @@ draft: false
 images: []
 ---
 
-The entries in this journal will be at random, meaning there will be no regular
-cadence.
+These are my random nonsensical journal entries. So, "beware all ye who enter
+for here be dragons", you have been warned.
