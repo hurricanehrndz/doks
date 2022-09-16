@@ -9,25 +9,21 @@
 			<h1>{{ .Title }}</h1>
 			<p class="lead">{{ .Params.lead | safeHTML }}</p>
 			{{ .Content }}
-			<h1>Recent entries</h1>
-			</br>
-			<div class="row row-cols-1 row-cols-lg-2 g-lg-5">
-				{{ $paginator := .Paginate (.Data.Pages) -}}
-				{{ range $paginator.Pages -}}
-				<div class="col">
-					<div class="card">
-						{{- .Scratch.Set "fillImage" "1270x620 Center" -}}
-						{{ partial "content/card-image.html" . }}
-						<div class="card-body">
-							<article>
-								<h2 class="h3"><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}</a></h2>
-								<p>{{ .Params.excerpt | safeHTML }}</p>
-								{{ partial "main/blog-meta.html" . -}}
-							</article>
+			<h2>Entries</h2>
+			<div class="row justify-content-center">
+					<article>
+						<div class="card-list">
+							{{ range .Data.Pages -}}
+								<div class="card">
+									<div class="card-body">
+										<h2 class="h3"><a class="stretched-link text-body" href="{{ .RelPermalink }}">{{ .Params.title }}{{ with .Params.emoji -}}&nbsp;{{ . | emojify }}{{ end -}}</a></h2>
+										<p>{{ .Params.lead | safeHTML }}</p>
+										{{ partial "main/blog-meta.html" . -}}
+									</div>
+								</div>
+							{{ end -}}
 						</div>
-					</div>
-				</div>
-				{{ end -}}
+					</article>
 			</div>
 			<div class="page-footer-meta d-flex flex-column flex-md-row justify-content-between">
 				{{ if .Site.Params.lastMod -}}
