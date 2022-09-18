@@ -1,7 +1,6 @@
 ---
 title : "HurricaneHrndz's Brainstorm"
 description: "Random swirl of thoughts and notes, without any rhyme or reason."
-lead: "Random swirl of thoughts and notes, without any rhyme or reason."
 date: 2020-10-06T08:47:36+00:00
 lastmod: 2020-10-06T08:47:36+00:00
 draft: false
