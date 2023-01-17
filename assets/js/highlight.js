@@ -17,6 +17,7 @@ hljs.registerLanguage('json', json);
 hljs.registerLanguage('bash', bash);
 hljs.registerLanguage('console', shell);
 hljs.registerLanguage('html', xml);
+hljs.registerLanguage('xml', xml);
 hljs.registerLanguage('ini', ini);
 hljs.registerLanguage('nix', nix);
 hljs.registerLanguage('swift', swift);
